@@ -60,7 +60,7 @@ abstract class JFormFieldPredefinedList extends JFormFieldList
 	protected function getOptions()
 	{
 		// Hash for caching
-		$hash = md5($this->element);
+		$hash = md5($this->element->asXML());
 		$type = strtolower($this->type);
 
 		if (!isset(static::$options[$type][$hash]) && !empty($this->predefinedOptions))
